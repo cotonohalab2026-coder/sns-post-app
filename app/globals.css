@@ -1,0 +1,216 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+
+:root {
+  --color-main: #E8799A;
+  --color-sub: #FFD6E0;
+  --color-text: #7B2D42;
+  --color-bg: #FFF5F7;
+  --color-button-bg: #E8799A;
+  --color-button-text: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: var(--color-bg);
+  color: #333333;
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.btn-main {
+  background-color: var(--color-main);
+  color: var(--color-button-text);
+  padding: 16px 24px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  transition: opacity 0.2s;
+  display: block;
+}
+
+.btn-main:hover, .btn-main:active {
+  opacity: 0.85;
+}
+
+.btn-main:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: var(--color-main);
+  padding: 14px 24px;
+  border-radius: 50px;
+  font-size: 17px;
+  font-weight: 600;
+  border: 2px solid var(--color-main);
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  transition: all 0.2s;
+  display: block;
+}
+
+.btn-secondary:hover, .btn-secondary:active {
+  background-color: var(--color-sub);
+}
+
+.btn-select {
+  background-color: #ffffff;
+  color: #333333;
+  padding: 16px 20px;
+  border-radius: 16px;
+  font-size: 17px;
+  font-weight: 500;
+  border: 2px solid #e0e0e0;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-select:hover, .btn-select:active {
+  border-color: var(--color-main);
+  background-color: var(--color-sub);
+}
+
+.btn-select.selected {
+  border-color: var(--color-main);
+  background-color: var(--color-sub);
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.screen {
+  min-height: 100vh;
+  padding: 24px 20px 40px;
+  background-color: var(--color-bg);
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  margin-bottom: 16px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 17px;
+  font-family: 'Noto Sans JP', sans-serif;
+  background: #ffffff;
+  color: #333333;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-field:focus {
+  border-color: var(--color-main);
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #444444;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #222222;
+  margin-bottom: 8px;
+}
+
+.page-subtitle {
+  font-size: 16px;
+  color: #666666;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #666666;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 8px 0;
+  margin-bottom: 16px;
+}
+
+.back-btn:hover {
+  color: var(--color-main);
+}
+
+.badge {
+  display: inline-block;
+  background-color: var(--color-sub);
+  color: var(--color-text);
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.loading-dot {
+  display: inline-block;
+  animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.loading-dot:nth-child(1) { animation-delay: -0.32s; }
+.loading-dot:nth-child(2) { animation-delay: -0.16s; }
+.loading-dot:nth-child(3) { animation-delay: 0; }
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: scale(0); }
+  40% { transform: scale(1.0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Trust badge */
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #888888;
+  font-size: 12px;
+  text-align: center;
+  justify-content: center;
+  margin-top: 16px;
+}
